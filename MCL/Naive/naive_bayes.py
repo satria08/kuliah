@@ -5,12 +5,10 @@ from sklearn.compose import ColumnTransformer
 from jcopml.pipeline import num_pipe, cat_pipe
 from jcopml.plot import plot_confusion_matrix
 
-
-data = pd.read_csv('D:\\kuliah\\Naive\\data.csv');
+data = pd.read_csv('D:\\kuliah\\MCL\\Naive\\data.csv');
 
 data_awal = data.drop(columns="Play")
 data_label = data.Play
-
 data_awal_train, data_awal_test,data_label_train, data_label_test = train_test_split(
     data_awal, 
     data_label,
@@ -29,7 +27,6 @@ preprocessor = ColumnTransformer([
 ])
 
 # print(preprocessor)
-
 from sklearn import pipeline
 from sklearn.naive_bayes import GaussianNB
 
